@@ -6,7 +6,7 @@ It features a neural network that takes, as an input, a number (expected to be b
 
 ## Usage
 
-Open `number-evaluator.html` in your browser of choice.
+Clone (or just download) the repo to your local drive, and then open `number-evaluator.html` in your browser of choice.
 
 Draw a number between 0 and 9 on the grid. Click `Get Assessment` to see results. The network will return a set of ten values between 0 and 1, which each represents the network's confidence that that particular number is the one drawn. The entry with the highest value represents, essentially, the network's conclusion about what number the user drew.
 
