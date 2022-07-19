@@ -11,7 +11,7 @@
             width: 20rem;
             height: 20rem;
             padding: 0px;
-            margin: 0px;
+            margin-left: 200px;
             overflow: hidden;
             border-radius: 1rem;
         }
@@ -65,7 +65,7 @@
 </head>
 
 <body onload="activate()">
-    <div style="width:20rem; margin-top:2rem;">
+    <div style="width:20rem; margin-top:2rem; margin-left: 200px;">
         <button onclick="getAssessment()" style="width:49%;">
             Get Assessment
         </button>
@@ -75,7 +75,7 @@
 
     </div>
     </textarea>
-    <div id="assessment" style="margin-top: 1rem;"></div>
+    <div id="assessment" style="margin-top: 1rem; margin-left: 200px; font-size: 25px;"></div>
     <br />
     <br />
     <div class="container" id="ourContainer">
@@ -361,13 +361,19 @@
 
         function activate() {
 
+            // whip up a neural network and provide a couple of hyper parameters
             jeffsNeuralNetwork = new brain.NeuralNetwork({
                 activation: 'sigmoid',
                 learningRate: 0.1
             })
+            
+            // generate some training data
             let jeffsTrainingData = getTrainingData()
+
+            // train the network to recognize numbers from your drawings
             jeffsNeuralNetwork.train(jeffsTrainingData)
 
+            // wire up the UI to make it all work
             document.getElementById('ourContainer')
                 .addEventListener('mouseover', e => {
                     let eventCameFromChild = e.target !== e.currentTarget
